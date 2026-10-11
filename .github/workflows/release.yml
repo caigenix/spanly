@@ -3,12 +3,14 @@ name: Release
 on:
   push:
     tags: ['v*']
+  workflow_dispatch: # on a tag: how bump.yml starts it (its tag push starts no workflow)
 
 permissions:
   contents: write
 
-# Push a tag like v1.2.3 (or v1.2.3-beta.1 for a pre-release): every build takes its version from
-# the tag (cmake/Version.cmake), and the last job publishes the GitHub release with the downloads.
+# Push a tag like v1.2.3 (or v1.2.3-beta.1 for a pre-release), or run the Bump version workflow:
+# every build takes its version from the tag (cmake/Version.cmake), and the last job publishes the
+# GitHub release with the downloads.
 env:
   SPANLY_VERSION: ${{ github.ref_name }}
 

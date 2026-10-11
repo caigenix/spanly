@@ -135,7 +135,9 @@ Compiler warnings are errors.
 The version comes from the git tag (`v1.2.3` → 1.2.3; between tags, e.g. `1.2.3-4-gabc1234`), and
 `spanly --version` prints it. Pushing a tag like `v0.2.0` (or `v0.2.0-beta.1` for a pre-release)
 builds everything with that version and publishes a GitHub release with `Spanly-mac.zip` and the
-Windows and Linux downloads. With these repository secrets, the Mac app is also signed with a Developer ID and
+Windows and Linux downloads. Or run **Actions → Bump version** with major, minor or patch: it tags
+the head of the branch with the next version after the latest release tag (v0.0.1, v0.1.0 or v1.0.0
+when there is none) and starts the release. With these repository secrets, the Mac app is also signed with a Developer ID and
 notarized: `MACOS_CERTIFICATE_P12` (base64 .p12), `MACOS_CERTIFICATE_PASSWORD`,
 `MACOS_SIGN_IDENTITY`, `NOTARY_KEY_P8`, `NOTARY_KEY_ID`, `NOTARY_ISSUER_ID`.
 
